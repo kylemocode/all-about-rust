@@ -18,6 +18,13 @@
  */
 
  // use HashMap -> time complexity O(n)
+
+ /**
+  * result
+    Runtime: 0 ms, faster than 100.00% of Rust online submissions for Two Sum.
+    Memory Usage: 2.4 MB, less than 18.92% of Rust online submissions for Two Sum.
+  */
+
 use std::collections::HashMap;
 
 pub struct Solution {}
