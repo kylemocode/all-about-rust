@@ -16,6 +16,7 @@
 // Constraints:
 // 1 <= prices.length <= 105
 // 0 <= prices[i] <= 104
+
 pub struct Solution {}
 
 impl Solution {
@@ -23,7 +24,7 @@ impl Solution {
         let mut profit = 0;
         let mut min = prices[0];
 
-        for (i, item) in prices.iter().enumerate() {
+        for (_i, item) in prices.iter().enumerate() {
             if *item < min {
                 min = *item;
             }
@@ -35,6 +36,24 @@ impl Solution {
         }
 
         return profit;
+    }
+}
+
+// Better solution: 最大子陣列問題
+
+impl Solution {
+    pub fn max_profit_Better(prices: Vec<i32>) -> i32 {
+        let mut max = 0;
+        let mut curr = 0;
+        for i in 1..prices.len() {
+            curr = curr + prices[i] - prices[i - 1];
+            if curr <= 0 {
+                curr = 0;
+            } else {
+                max = i32::max(max, curr);
+            }
+        }
+        max
     }
 }
 
