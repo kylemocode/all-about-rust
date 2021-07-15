@@ -29,15 +29,14 @@ impl Solution {
                 return true;
             }
         }
-        
-        return false;
+        false
     }
 }
 
 // better solution
 
 impl Solution {
-    pub fn contains_duplicate(nums: Vec<i32>) -> bool {
+    pub fn contains_duplicate_better(nums: Vec<i32>) -> bool {
         if nums.is_empty() {
             return false;
         }
